@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+
+void main()
+{
+    FILE *fp;
+    char name[300];
+
+    //clrscr();
+
+    // 1. Writing data into file
+    fp = fopen("janish.txt", "w");
+
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+    
+        return;
+    }
+
+    fprintf(fp, "before he come the class was so boring and not understable after he came the class was joyful,understable and we are comfortable this sir sir;
+
+    fclose(fp)
+
+    printf("Data written successfully\n");
+
+
+    // 2. Appending data into file
+    fp = fopen("janish.txt", "a");
+
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+        
+        return;
+    }
+
+    fprintf(fp, "\n");
+
+    fclose(fp);
+
+    printf("Data appended successfully\n");
+
+
+    // 3. Reading data from file
+    fp = fopen("janish.txt", "r");
+
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+        
+        return;
+    }
+
+    printf("\nFile Contents:\n");
+
+    while (fgets(name, sizeof(name), fp) != NULL)
+    {
+        printf("%s", name);
+    }
+
+    fclose(fp);
+
+
+}
